@@ -37,6 +37,4 @@ public class Genre {
 			return false;
 		return true;
 	}
-	
-	
 }

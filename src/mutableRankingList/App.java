@@ -14,6 +14,15 @@ public class App implements Comparable<App> {
 		this.genre = genre;
 	}
 	
+	/**
+	 * @param title
+	 * @param genre
+	 */
+	public App(String title, String genre) {
+		this.title = new Title(title);
+		this.genre = new Genre(genre);
+	}
+	
 	/* 
 	 * Comparison based on title for alphabetic sorting
 	 * @param that non-null App, throws nullPointer for null 

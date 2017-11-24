@@ -40,7 +40,7 @@ public class MutableRankingList<E extends Comparable<E>> implements Iterable<E> 
 	    
 	    public void incrementDownloadsCount(E item)
 	    {
-	    		root.insert(item);
+	    		this.root = root.insert(item);
 	    }
 	    
 	    public int getDownloadsCount(E item)

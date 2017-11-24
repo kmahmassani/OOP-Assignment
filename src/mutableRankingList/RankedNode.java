@@ -28,10 +28,11 @@ public class RankedNode<E>
      * 
      * @param item the Object to be the item of the node
      */
-    public RankedNode(E item)
+    public RankedNode(E item, int downloads)
     {
         this.item = item; 
         this.next = null;
+        this.downloads = downloads;
     }
 
     /**
@@ -76,16 +77,14 @@ public class RankedNode<E>
 	}
 
     /**
-     * increment the downloads of this node
+     * Set the downloads of this node
      * 
-     * 
+     * @param the downloads of this node
      */
-	public void incrementDownloads() {
-		this.downloads++;
+	public void setDownloads(int downloads) {
+		this.downloads = downloads;
 	}
 	
-	
-    
     /**
      * Set the next node of this node
      * 

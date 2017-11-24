@@ -186,7 +186,7 @@ public class LinkedStack<E> implements Iterable<E>
             node = node.getNext();
         }
 
-        while (node != null)
+        while (node != null) 
         {
             builder.append(", ");
             builder.append(node.getItem().toString());

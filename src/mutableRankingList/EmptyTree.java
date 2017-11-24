@@ -23,7 +23,7 @@ public class EmptyTree<E extends Comparable<E>> implements RankedTree<E>
         return empty;
     }
     
-    public int size()
+    public int size() 
     {
         return 0;
     }
@@ -69,6 +69,6 @@ public class EmptyTree<E extends Comparable<E>> implements RankedTree<E>
 	@Override
 	public int getDownloads(E elem) {
 		// TODO Auto-generated method stub
-		return 0;
+		throw new NoSuchElementException();
 	}
 }
