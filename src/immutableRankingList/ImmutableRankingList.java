@@ -5,10 +5,7 @@ public  final class ImmutableRankingList<E extends ImmutableRankingListItem<E>> 
 
 	    private final RankedTree<E> root;
 	    
-	    public ImmutableRankingList()
-	    {
-	        root = EmptyTree.<E>getEmptyTree();
-	    }
+	    
 	    
 	    public ImmutableRankingList(RankedTree<E> root) {
 	    	this.root = root;

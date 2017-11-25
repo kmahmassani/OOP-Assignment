@@ -11,32 +11,30 @@ public class ImmutableRankingListTests {
 
 	@Test
 	public void testIncrementDownloadsCount() {
-		ImmutableRankingList<App> list = new ImmutableRankingList<App>();
 		
 		App testApp = new App("Whatsapp","Social Media");
 		
-		list.incrementDownloadsCount(testApp);
+		ImmutableRankingList<App> list = new ImmutableRankingList<App>(testApp);
 		
 		assertEquals(1, list.getDownloadsCount(testApp));
 		
-		list.incrementDownloadsCount(testApp);
+		ImmutableRankingList<App> list2 = list.incrementDownloadsCount(testApp);
 		
-		assertEquals(list.getDownloadsCount(testApp), 2);
+		assertEquals(2, list2.getDownloadsCount(testApp));
+		assertEquals(1, list.getDownloadsCount(testApp));
 	}
 	
 	@Test
-	public void testAlphabeticalRetrieval() {
-		ImmutableRankingList<App> list = new ImmutableRankingList<App>();
-		
+	public void testAlphabeticalRetrieval() {				
 		App alfaApp = new App("Alfa", "");
 		App bravoApp = new App("Bravo", "");
 		App charlieApp = new App("Charlie", "");
 		App deltaApp = new App("Delta", "");
 		
-		list.incrementDownloadsCount(bravoApp);
-		list.incrementDownloadsCount(alfaApp);
-		list.incrementDownloadsCount(deltaApp);
-		list.incrementDownloadsCount(charlieApp);
+		ImmutableRankingList<App> list = new ImmutableRankingList<App>(bravoApp);
+		list = list.incrementDownloadsCount(alfaApp);
+		list = list.incrementDownloadsCount(deltaApp);
+		list = list.incrementDownloadsCount(charlieApp);
 		
 		Iterator<App> it = list.iterator();
 		
@@ -48,10 +46,25 @@ public class ImmutableRankingListTests {
 	
 	@Test(expected = NoSuchElementException.class)
 	public void testNonExistantApp() {
-		ImmutableRankingList<App> list = new ImmutableRankingList<App>();
-		
 		App testApp = new App("Whatsapp","Social Media");
 		
-		list.getDownloadsCount(testApp);
+		ImmutableRankingList<App> list = new ImmutableRankingList<App>(testApp);
+		
+		list.getDownloadsCount(new App("xyz", "Alphabet"));
+	}
+	
+	@Test
+	public void testImmutabilityOfItem() {
+				
+		App testApp = new App("Whatsapp","Social Media");
+		ImmutableRankingList<App> list = new ImmutableRankingList<App>(testApp);
+		
+		testApp.title.name = "test";
+		
+		Iterator<App> it = list.iterator();
+		App listApp = it.next();
+		
+		assertEquals(false, listApp == testApp);
+		assertEquals("Whatsapp", listApp.title.name);
 	}
 }

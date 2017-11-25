@@ -70,7 +70,7 @@ public final class NonEmptyTree<E extends ImmutableRankingListItem<E>> implement
     {
         LinkedStack<E> result = new LinkedStack<E>();
         result= right.spine(stack);
-        result.push(this.item);
+        result.push(this.item.DeepCopy());
         result= left.spine(result);
         return result;//left.spine(new Stack<E>(this, stack)); 
     }
