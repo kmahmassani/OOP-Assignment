@@ -28,7 +28,7 @@ public class RankedNode<E>
      * 
      * @param item the Object to be the item of the node
      */
-    public RankedNode(E item, int downloads)
+    public RankedNode(E item, int downloads) 
     {
         this.item = item; 
         this.next = null;

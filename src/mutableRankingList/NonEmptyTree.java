@@ -66,7 +66,7 @@ public class NonEmptyTree<E extends Comparable<E>> implements RankedTree<E>
         result= right.spine(stack);
         result.push(this.item);
         result= left.spine(result);
-        return result;//left.spine(new Stack<E>(this, stack)); 
+        return result; 
     }
     
     public Iterator<E> iterator(){

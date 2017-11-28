@@ -4,8 +4,8 @@ import java.util.Iterator;
 import java.util.NoSuchElementException;
 
 /**
- * @author  Daniel W.H. James
- * @version OOP Nov 2011
+ * @author  Original - Daniel W.H. James, Modified By - Kamal Mahmassani
+ * @version OOP Nov 2017
  */
 public class EmptyTree<E extends ImmutableRankingListItem<E>> implements RankedTree<E>
 {

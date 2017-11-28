@@ -2,8 +2,8 @@ package immutableRankingList;
 
 import java.util.Iterator;
 /**
- * @author  Daniel W.H. James
- * @version OOP Nov 2011
+ * @author  Original - Daniel W.H. James, Modified By - Kamal Mahmassani
+ * @version OOP Nov 2017
  */
 public final class NonEmptyTree<E extends ImmutableRankingListItem<E>> implements RankedTree<E>
 {
@@ -72,7 +72,7 @@ public final class NonEmptyTree<E extends ImmutableRankingListItem<E>> implement
         result= right.spine(stack);
         result.push(this.item.DeepCopy());
         result= left.spine(result);
-        return result;//left.spine(new Stack<E>(this, stack)); 
+        return result;
     }
     
     public Iterator<E> iterator(){

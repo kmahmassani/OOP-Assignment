@@ -1,8 +1,8 @@
 package immutableRankingList;
 
 /**
- * @author  Daniel W.H. James
- * @version OOP Nov 2011
+ * @author  Original - Daniel W.H. James, Modified By - Kamal Mahmassani
+ * @version OOP Nov 2017
  */
 public interface RankedTree<E extends Comparable<E>> extends Iterable<E>
 {

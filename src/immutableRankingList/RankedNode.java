@@ -48,16 +48,6 @@ public class RankedNode<E>
     }
 
     /**
-     * Set the item of this node
-     * 
-     * @param newItem the new item
-     */
-    public void setItem(E newItem)
-    {
-        this.item = newItem;
-    }
-
-    /**
      * Return the item of this node
      * 
      * @return the item of this node
